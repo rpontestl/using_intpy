@@ -28,7 +28,6 @@ def compute_quadrature(n):
 
 @initialize_intpy(__file__)
 def main(n):
-    print('Gauss-Legendre Quadrature of order: ', n)
     print(compute_quadrature(n))
 
 
