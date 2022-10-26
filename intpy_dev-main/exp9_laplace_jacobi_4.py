@@ -97,4 +97,4 @@ if __name__ == "__main__":
     n = int(sys.argv[1])
     start = time.perf_counter()
     main(n)
-    print('loop solver time: '+ (str) (time.perf_counter()-start)+' s')
+    print(time.perf_counter()-start)
