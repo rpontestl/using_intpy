@@ -63,7 +63,6 @@ def loop_solver(n):
     while(iteration < 100000 and error > 1e-6):
         (u, error) = loop_time_step(u)
         iteration += 1
-    return (u, error, iteration)
 
 @deterministic
 def vectorized_solver(n):
@@ -91,14 +90,11 @@ def vectorized_solver(n):
 
 @initialize_intpy(__file__)
 def main(n):
-    start = time.perf_counter()
     print(loop_solver(n))
-    print('loop solver time: '+ (str) (time.perf_counter()-start)+' s')
-    start = time.perf_counter()
-    print(vectorized_solver(n))
-    print('vectorized solver time: '+(str) (time.perf_counter()-start)+ ' s')
+    
 
 if __name__ == "__main__":
     n = int(sys.argv[1])
+    start = time.perf_counter()
     main(n)
-    
+    print('loop solver time: '+ (str) (time.perf_counter()-start)+' s')
